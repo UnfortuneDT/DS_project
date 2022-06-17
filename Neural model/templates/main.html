@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<style>
+form{
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+
+</style>
+
+
+<head>
+    <title>Прогнозирование соотношения матрица-наполнитель</title>
+</head>
+
+<form action = "{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend>Введите значение</legend>
+        Плотность, кг/м3
+        <input name = "first_data" type="number"
+        required>
+        <br>
+        <br>
+        Модуль упругости, ГПа
+        <input name = "second_data" type="number"
+        required>
+        <br>
+        <br>
+        Количество отвердителя, м.%
+        <input name = "third_data" type="number"
+        required>
+        <br>
+        <br>
+        Содержание эпоксидных групп,%_2
+        <input name = "fourth_data" type="number"
+        required>
+        <br>
+        <br>
+        Температура вспышки, С_2
+        <input name = "fifth_data" type="number"
+        required>
+        <br>
+        <br>
+        Поверхностная плотность, г/м2
+        <input name = "sixth_data" type="number"
+        required>
+        <br>
+        <br>
+        Модуль упругости при растяжении, ГПа
+        <input name = "seventh_data" type="number"
+        required>
+        <br>
+        <br>
+        Прочность при растяжении, МПа
+        <input name = "eighth_data" type="number"
+        required>
+        <br>
+        <br>
+        Потребление смолы, г/м2
+        <input name = "ninth_data" type="number"
+        required>
+        <br>
+        <br>
+        Угол нашивки, град
+        <input name = "eleventh_data" type="number"
+        required>
+        <br>
+        <br>
+        Шаг нашивки
+        <input name = "twelfth_data" type="number"
+        required>
+        <br>
+        <br>
+        Плотность нашивки
+        <input name = "thirtheenth_data" type="number"
+        required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <p style ="font-size:50px">
+        Прогнозируемое соотношение
+        </p>
+        <p style="font-size:50px"> {{result}}</p>
+    {% endif %}
+</div>
